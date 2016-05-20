@@ -8,46 +8,66 @@
 
 import UIKit
 
+public protocol OECodeValidationViewDelegate: class {
+    
+}
+
 @IBDesignable
-class OECodeValidationView: UIView {
+public class OECodeValidationView: UIView {
     
     private var inputTextFields = [UITextField]()
     private var codeStackView = UIStackView()
     
-    private let numberOfFields = 5
+    private let numberOfFields: Int = 5
+    private let textFieldSize: CGFloat = 50
+    private let spacing: CGFloat = 8
     
     // MARK: - NSObject
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        for _ in 0..<self.numberOfFields {
-            let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            textField.font = UIFont.systemFontOfSize(16)
-            self.codeStackView.addArrangedSubview(textField)
-            self.inputTextFields.append(textField)
-        }
+        let width = (CGFloat(self.numberOfFields) * self.textFieldSize) + (CGFloat(self.numberOfFields.predecessor()) * self.spacing)
+        assert(width < self.bounds.width, "textfields size is too big")
         
         self.codeStackView.axis = .Horizontal
         self.codeStackView.alignment = .Fill
         self.codeStackView.distribution = .EqualSpacing
-        self.codeStackView.spacing = 8
+        self.codeStackView.spacing = self.spacing
+        self.codeStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        let constraint1 = NSLayoutConstraint(item: self.codeStackView, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1, constant: 0)
-        
-        let constraint2 = NSLayoutConstraint(item: self.codeStackView, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
+        let centerXConstraint = NSLayoutConstraint(item: self.codeStackView, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0)
+        let centerYConstraint = NSLayoutConstraint(item: self.codeStackView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0)
         
         self.addSubview(self.codeStackView)
-        self.addConstraints([constraint1, constraint2])
+        self.addConstraints([centerXConstraint, centerYConstraint])
         
         
+        for index in 0..<self.numberOfFields {
+            let textField = UITextField()
+            textField.borderStyle = .RoundedRect
+            textField.textAlignment = .Center
+            textField.font = UIFont.systemFontOfSize(20)
+            textField.keyboardType = .NumberPad
+            textField.delegate = self
+            textField.clearsOnInsertion = true
+            textField.heightAnchor.constraintEqualToConstant(self.textFieldSize).active = true
+            textField.widthAnchor.constraintEqualToConstant(self.textFieldSize).active = true
+            
+            self.codeStackView.addArrangedSubview(textField)
+            self.inputTextFields.append(textField)
+            
+            if index == 0 {
+                textField.becomeFirstResponder()
+            }
+        }
     }
     
     // MARK: - UIView
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        // TODO: - Add Support
     }
     
     // MARK: - Animation
@@ -61,5 +81,36 @@ class OECodeValidationView: UIView {
         jiggle.toValue = NSValue(CGPoint: CGPoint(x: self.codeStackView.center.x + 5, y: self.codeStackView.center.y))
         jiggle.removedOnCompletion = true
         self.codeStackView.layer.addAnimation(jiggle, forKey: "position")
+    }
+}
+
+extension OECodeValidationView: UITextFieldDelegate {
+    
+    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if textField.text?.characters.count >= 0 && string.characters.count > 0 {
+            textField.text = string
+            
+            if let index = self.inputTextFields.indexOf(textField) {
+                if index < (self.inputTextFields.count.predecessor()) {
+                    self.inputTextFields[index.successor()].becomeFirstResponder()
+                }
+                else {
+                    
+                }
+            }
+            
+            return false
+        }
+        else if textField.text?.characters.count >= 1  && string.characters.count == 0 {
+            textField.text = nil
+            
+            if let index = self.inputTextFields.indexOf(textField) where index > 0 {
+                self.inputTextFields[index.predecessor()].becomeFirstResponder()
+            }
+            
+            return false
+        }
+        
+        return true
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A5CDDEA8FB138D8DA5350F6 /* Pods_OECodeValidationView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBED16EAB8B480182ED96FE /* Pods_OECodeValidationView.framework */; };
 		79633A541CEF0657002C9F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79633A531CEF0657002C9F41 /* AppDelegate.swift */; };
 		79633A561CEF0657002C9F41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79633A551CEF0657002C9F41 /* ViewController.swift */; };
 		79633A591CEF0657002C9F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79633A571CEF0657002C9F41 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		79633A5E1CEF0657002C9F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79633A5C1CEF0657002C9F41 /* LaunchScreen.storyboard */; };
 		79633A691CEF0657002C9F41 /* OECodeValidationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79633A681CEF0657002C9F41 /* OECodeValidationViewTests.swift */; };
 		79633A771CEF07B6002C9F41 /* OECodeValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79633A761CEF07B6002C9F41 /* OECodeValidationView.swift */; };
+		CEA3DCDD55C0A3ACE038AF92 /* Pods_OECodeValidationViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2157EDA4FB9EE3D0ABE5ED56 /* Pods_OECodeValidationViewTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17DF28E2D575A7BA35BDE770 /* Pods-OECodeValidationView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OECodeValidationView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OECodeValidationView/Pods-OECodeValidationView.debug.xcconfig"; sourceTree = "<group>"; };
+		2157EDA4FB9EE3D0ABE5ED56 /* Pods_OECodeValidationViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OECodeValidationViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79633A501CEF0657002C9F41 /* OECodeValidationView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OECodeValidationView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79633A531CEF0657002C9F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79633A551CEF0657002C9F41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		79633A681CEF0657002C9F41 /* OECodeValidationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OECodeValidationViewTests.swift; sourceTree = "<group>"; };
 		79633A6A1CEF0657002C9F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79633A761CEF07B6002C9F41 /* OECodeValidationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OECodeValidationView.swift; path = Sources/OECodeValidationView.swift; sourceTree = "<group>"; };
+		82D16B60A195B56D59D77CC6 /* Pods-OECodeValidationViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OECodeValidationViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OECodeValidationViewTests/Pods-OECodeValidationViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		841D1A47D61E826A256D6CD2 /* Pods-OECodeValidationViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OECodeValidationViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OECodeValidationViewTests/Pods-OECodeValidationViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		BFBED16EAB8B480182ED96FE /* Pods_OECodeValidationView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OECodeValidationView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAB8D6B053E4D25ADC9B12F1 /* Pods-OECodeValidationView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OECodeValidationView.release.xcconfig"; path = "Pods/Target Support Files/Pods-OECodeValidationView/Pods-OECodeValidationView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5CDDEA8FB138D8DA5350F6 /* Pods_OECodeValidationView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA3DCDD55C0A3ACE038AF92 /* Pods_OECodeValidationViewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		698956FB2A1D927127BA9342 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17DF28E2D575A7BA35BDE770 /* Pods-OECodeValidationView.debug.xcconfig */,
+				DAB8D6B053E4D25ADC9B12F1 /* Pods-OECodeValidationView.release.xcconfig */,
+				82D16B60A195B56D59D77CC6 /* Pods-OECodeValidationViewTests.debug.xcconfig */,
+				841D1A47D61E826A256D6CD2 /* Pods-OECodeValidationViewTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		79633A471CEF0657002C9F41 = {
 			isa = PBXGroup;
 			children = (
 				79633A521CEF0657002C9F41 /* OECodeValidationView */,
 				79633A671CEF0657002C9F41 /* OECodeValidationViewTests */,
 				79633A511CEF0657002C9F41 /* Products */,
+				698956FB2A1D927127BA9342 /* Pods */,
+				F93050A9D8C6634CE7D7EF45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +146,15 @@
 			name = Example;
 			sourceTree = "<group>";
 		};
+		F93050A9D8C6634CE7D7EF45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFBED16EAB8B480182ED96FE /* Pods_OECodeValidationView.framework */,
+				2157EDA4FB9EE3D0ABE5ED56 /* Pods_OECodeValidationViewTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79633A6D1CEF0657002C9F41 /* Build configuration list for PBXNativeTarget "OECodeValidationView" */;
 			buildPhases = (
+				6CCF23B3332E404A1E311EF2 /* 📦 Check Pods Manifest.lock */,
 				79633A4C1CEF0657002C9F41 /* Sources */,
 				79633A4D1CEF0657002C9F41 /* Frameworks */,
 				79633A4E1CEF0657002C9F41 /* Resources */,
+				14B3C168639B6473728FC4E9 /* 📦 Embed Pods Frameworks */,
+				4CB083569405128355119940 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79633A701CEF0657002C9F41 /* Build configuration list for PBXNativeTarget "OECodeValidationViewTests" */;
 			buildPhases = (
+				723395EB3F6939B3C9174E5C /* 📦 Check Pods Manifest.lock */,
 				79633A601CEF0657002C9F41 /* Sources */,
 				79633A611CEF0657002C9F41 /* Frameworks */,
 				79633A621CEF0657002C9F41 /* Resources */,
+				0DF07D0CBD0D405A90B0C46D /* 📦 Embed Pods Frameworks */,
+				7712C8E2E4E2B9CB70E8FC9E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +256,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DF07D0CBD0D405A90B0C46D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OECodeValidationViewTests/Pods-OECodeValidationViewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14B3C168639B6473728FC4E9 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OECodeValidationView/Pods-OECodeValidationView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CB083569405128355119940 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OECodeValidationView/Pods-OECodeValidationView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CCF23B3332E404A1E311EF2 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		723395EB3F6939B3C9174E5C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7712C8E2E4E2B9CB70E8FC9E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OECodeValidationViewTests/Pods-OECodeValidationViewTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79633A4C1CEF0657002C9F41 /* Sources */ = {
@@ -355,6 +486,7 @@
 		};
 		79633A6E1CEF0657002C9F41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17DF28E2D575A7BA35BDE770 /* Pods-OECodeValidationView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OECodeValidationView/Info.plist;
@@ -366,6 +498,7 @@
 		};
 		79633A6F1CEF0657002C9F41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAB8D6B053E4D25ADC9B12F1 /* Pods-OECodeValidationView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OECodeValidationView/Info.plist;
@@ -377,6 +510,7 @@
 		};
 		79633A711CEF0657002C9F41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82D16B60A195B56D59D77CC6 /* Pods-OECodeValidationViewTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = OECodeValidationViewTests/Info.plist;
@@ -389,6 +523,7 @@
 		};
 		79633A721CEF0657002C9F41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 841D1A47D61E826A256D6CD2 /* Pods-OECodeValidationViewTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = OECodeValidationViewTests/Info.plist;
@@ -418,6 +553,7 @@
 				79633A6F1CEF0657002C9F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79633A701CEF0657002C9F41 /* Build configuration list for PBXNativeTarget "OECodeValidationViewTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +562,7 @@
 				79633A721CEF0657002C9F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
