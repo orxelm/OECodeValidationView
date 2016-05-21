@@ -9,17 +9,45 @@
 import UIKit
 
 public protocol OECodeValidationViewDelegate: class {
-    
+    func isCode(code: String) -> (Void -> Bool)
 }
 
 @IBDesignable
 public class OECodeValidationView: UIView {
     
+    weak var delegate: OECodeValidationViewDelegate?
+    /// The
+    private let numberOfFields: Int = 4
+    
+    /// The
+    private let textFieldSize: CGFloat = 50
+    
+    /// The
+    @IBInspectable
+    public var textFieldFont: UIFont = .systemFontOfSize(20) {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The
+    @IBInspectable
+    public var textFieldTextColor: UIColor? {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
+    /// The
+    @IBInspectable
+    public var textFieldTintColor: UIColor? {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    
     private var inputTextFields = [UITextField]()
     private var codeStackView = UIStackView()
-    
-    private let numberOfFields: Int = 5
-    private let textFieldSize: CGFloat = 50
     private let spacing: CGFloat = 8
     
     // MARK: - NSObject
@@ -28,7 +56,7 @@ public class OECodeValidationView: UIView {
         super.init(coder: aDecoder)
         
         let width = (CGFloat(self.numberOfFields) * self.textFieldSize) + (CGFloat(self.numberOfFields.predecessor()) * self.spacing)
-        assert(width < self.bounds.width, "textfields size is too big")
+        assert(width < self.bounds.width, "textfields size is too big to fit screen. either set smaller textfiled size or enlarge the OECodeValidationView")
         
         self.codeStackView.axis = .Horizontal
         self.codeStackView.alignment = .Fill
@@ -42,12 +70,13 @@ public class OECodeValidationView: UIView {
         self.addSubview(self.codeStackView)
         self.addConstraints([centerXConstraint, centerYConstraint])
         
-        
         for index in 0..<self.numberOfFields {
             let textField = UITextField()
             textField.borderStyle = .RoundedRect
             textField.textAlignment = .Center
-            textField.font = UIFont.systemFontOfSize(20)
+            textField.font = self.textFieldFont
+            textField.textColor = self.textFieldTextColor
+            textField.tintColor = self.textFieldTintColor
             textField.keyboardType = .NumberPad
             textField.delegate = self
             textField.clearsOnInsertion = true
@@ -70,11 +99,20 @@ public class OECodeValidationView: UIView {
         // TODO: - Add Support
     }
     
+    // MARK: - Helpers
+    
+    private func validateCode() {
+        let code = self.inputTextFields.flatMap { $0.text }.joinWithSeparator("")
+        if let valid = self.delegate?.isCode(code)() where valid == false{
+            self.startJiggleAnimation()
+        }
+    }
+    
     // MARK: - Animation
     
     private func startJiggleAnimation() {
         let jiggle = CABasicAnimation(keyPath: "position")
-        jiggle.duration = 0.05
+        jiggle.duration = 0.06
         jiggle.repeatCount = 3
         jiggle.autoreverses = true
         jiggle.fromValue = NSValue(CGPoint: CGPoint(x: self.codeStackView.center.x - 5, y: self.codeStackView.center.y))
@@ -95,7 +133,7 @@ extension OECodeValidationView: UITextFieldDelegate {
                     self.inputTextFields[index.successor()].becomeFirstResponder()
                 }
                 else {
-                    
+                    self.validateCode()
                 }
             }
             

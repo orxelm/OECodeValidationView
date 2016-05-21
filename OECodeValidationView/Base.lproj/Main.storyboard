@@ -23,6 +23,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="E86-yd-Fhl"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textFieldTextColor">
+                                        <color key="value" red="0.9711206896551724" green="0.025404094827586206" blue="0.054202586206896552" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textFieldTintColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="0.054202586210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -32,6 +40,9 @@
                             <constraint firstAttribute="trailing" secondItem="HTF-ZU-7Ra" secondAttribute="trailing" constant="20" symbolic="YES" id="xcR-ZE-zVP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codeValidationView" destination="HTF-ZU-7Ra" id="Bge-Al-NNE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
