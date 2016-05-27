@@ -8,8 +8,10 @@
 
 import UIKit
 
+public typealias completionHandlerCodeValidation = (success: Bool) -> Void
+
 public protocol OECodeValidationViewDelegate: class {
-    func isCode(code: String) -> (Void -> Bool)
+    func oeCodeValidationView(oeCodeValidationView: OECodeValidationView, checkForValidCode code: String, withCompletionHandler completionHandler: completionHandlerCodeValidation)
 }
 
 @IBDesignable
@@ -103,9 +105,11 @@ public class OECodeValidationView: UIView {
     
     private func validateCode() {
         let code = self.inputTextFields.flatMap { $0.text }.joinWithSeparator("")
-        if let valid = self.delegate?.isCode(code)() where valid == false{
-            self.startJiggleAnimation()
-        }
+        self.delegate?.oeCodeValidationView(self, checkForValidCode: code, withCompletionHandler: { (success) in
+            if !success {
+                self.startJiggleAnimation()
+            }
+        })
     }
     
     // MARK: - Animation

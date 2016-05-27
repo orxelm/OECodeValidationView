@@ -22,12 +22,8 @@ class ViewController: UIViewController {
 
 extension ViewController: OECodeValidationViewDelegate {
     
-    func isCode(code: String) -> (Void -> Bool) {
-        return {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-                return false
-            }
-        }
+    func oeCodeValidationView(oeCodeValidationView: OECodeValidationView, checkForValidCode code: String, withCompletionHandler completionHandler: completionHandlerCodeValidation) {
+        completionHandler(success: false)
     }
 }
 
